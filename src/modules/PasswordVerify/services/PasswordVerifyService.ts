@@ -1,4 +1,4 @@
-export default function validatePasswordService(input: string) {
+export function repeatedCharacters(input: string) {
   const charMap = <any>{};
 
   for (const char of input.toLowerCase()) {
@@ -9,18 +9,40 @@ export default function validatePasswordService(input: string) {
     (count: any) => count > 1
   ).length;
 
-  //Verifica se existe mais de um caractere repetido
   if (repeatedCharacters > 0) {
     return false;
   }
+  return true;
 
-  //Verifica espaços em branco
+}
+
+
+export function verifyBlankSpaces(input: string) {
   if (input.indexOf(" ") >= 0) {
-    return false;
+    return true;
   }
 
+  return false;
+}
+
+
+export function passwordRules(input: string) {
   if (input)
     return /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{9,}$/.test(
       input
     );
+}
+
+
+export default function validatePasswordService(input: string) {
+  if (
+    repeatedCharacters(input) &&
+    verifyBlankSpaces(input) &&
+    passwordRules(input)
+  ) {
+    return true;
+  }
+
+  return false;
+
 }
