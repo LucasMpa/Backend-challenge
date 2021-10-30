@@ -1,6 +1,6 @@
 ## RUNNING:
   - In terminal run: yarn 
-  - And yarn start
+  - And yarn dev
 
 # Description
 
