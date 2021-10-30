@@ -2,17 +2,19 @@
   - In terminal run: yarn 
   - And yarn start
 
-# Descrição
+# Description
 
-Considere uma senha sendo válida quando a mesma possuir as seguintes definições:
+It is considered a valid password when it has the following definitions:
 
-- Nove ou mais caracteres
-- Ao menos 1 dígito
-- Ao menos 1 letra minúscula
-- Ao menos 1 letra maiúscula
-- Ao menos 1 caractere especial
-  - Considere como especial os seguintes caracteres: !@#$%^&*()-+
-- Não possuir caracteres repetidos dentro do conjunto
+- Nine or more characters.
+- At least one digit.
+- At least one uppercase letter.
+- At least one lowercase letter.
+- At least one special character.
+- Consider the following characters as special characters: !@#$%^&*()-+
+- Have no repeated characters in the conjunct.
+
+> **_Note:_**  Don't consider white spaces as valid characters.
 
 Exemplo:  
 
@@ -27,14 +29,15 @@ IsValid("AbTp9 fok") // false
 IsValid("AbTp9!fok") // true
 ```
 
-> **_Nota:_**  Espaços em branco não devem ser considerados como caracteres válidos.
 
-## Problema
 
-Construa uma aplicação que exponha uma api web que valide se uma senha é válida.
+## Problem
 
-Input: Uma senha (string).  
-Output: Um boolean indicando se a senha é válida.
+
+Build an application that exposes a web API that validates if a password is valid.
+
+Input: A password (string).  
+Output: A boolean that's indicate if that password is valid
 
 ## Concepts
   - Design Patterns
@@ -42,3 +45,16 @@ Output: Um boolean indicando se a senha é válida.
   - Clean Architecture
   - TDD
   - Mock or Fake
+
+
+## Documentation
+  URL: `http://localhost:3000/password`<br>
+  Method: POST<br>  
+  Payload Example: 
+  ```
+  {
+	  "password": "AbTp9!fok"
+  }
+  ```
+  
+  
